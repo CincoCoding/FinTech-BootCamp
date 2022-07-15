@@ -6,7 +6,7 @@ undertake based on max NPV values.
 """
 
 # @TODO: Import the NumPy Financial (numpy_financial) library
-
+import numpy_financial
 
 # Discount Rate
 discount_rate = .1

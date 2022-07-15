@@ -7,58 +7,61 @@ row of the file to calculate customer sales averages.
 """
 
 # @TODO: Import the pathlib and csv library
-
-
+from pathlib import Path
+import csv
 
 # @TODO: Set the file path
-
+csvpath = Path('C:/Users/range/Documents/FinTech BootCamp/Class_6_Activities/08-Stu_File_IO/Resources/customer_traffic.txt')
 
 # Initialize list of records
 records = []
 
 # @TODO: Open the csv file as an object
+with open(csvpath, "r") as csvfile:
 
-
-    # @TODO:
     # Pass in the csv file to the csv.reader() function
     # (with ',' as the delmiter/separator) and return the csvreader object
+    csvreader = csv.reader(csvfile, delimiter = ",")
+    
+    # Read the header row
+    csv_header = next(csvreader)
+    # Print the header
+    print(csv_header)
 
-    # @TODO: Read the header row
+    # Append the column 'Average' to the header
+    csv_header.append("Average")
+    # Append the header to the list of records
+    records.append(csv_header)
 
-    # @TODO: Print the header
-
-
-    # @TODO: Append the column 'Average' to the header
-
-    # @TODO: Append the header to the list of records
-
-
-    # @TODO: Read each row of data after the header
-
-        # @TODO: Print the row
-
-        # @TODO:
+    # Read each row of data after the header
+    for row in csvreader:
+    
+        # Print the row
+        print(row)
+        
         # Set the 'name', 'count', 'revenue' variables for better
         # readability, convert strings to ints for numerical calculations
+        name = row[0]
+        count = int(row[1])
+        revenue = int(row[2])
 
+        # Calculate the average (round to the nearest 2 decimal places)
+        average = round(revenue / count, 2)    
 
+        # Append the average to the row
+        row.append(average)
+        # Append the row to the list of records
+        records.append(row)
 
+# Set the path for the output.csv
+output = Path("output.csv")
 
-        # @TODO: Calculate the average (round to the nearest 2 decimal places)
-
-
-        # @TODO: Append the average to the row
-
-        # @TODO: Append the row to the list of records
-
-
-# @TODO: Set the path for the output.csv
-
-# @TODO:
 # Open the output path as a file and pass into the 'csv.writer()' function
 # Set the delimiter/separater as a ','
+with open(ouput, "w") as csvfile:
+    csvwriter = csv.writer(csvfile, delimiter = ",")
 
-
-    # @TODO:
     # Loop through the list of records and write every record to the
     # output csv file
+    for record in records:
+        csvwriter.writerow(record)

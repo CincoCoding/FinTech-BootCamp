@@ -7,9 +7,12 @@ undertake based on max NPV values.
 
 # @TODO: Import the NumPy Financial (numpy_financial) library
 # @TODO: You may need to run `pip install numpy-financial` in your terminal to install the library
+import numpy_financial as npf
+import numpy
+
 
 # Discount Rate
-discount_rate = .1
+interest_rate = .1
 
 # Initial Investment, Cash Flow 1, Cash Flow 2, Cash Flow 3, Cash Flow 4
 cash_flows_conservative = [-1000, 400, 400, 400, 400]
@@ -20,10 +23,13 @@ cash_flows_aggressive = [-2250, 800, 800, 800, 800]
 npv_dict = {}
 
 # @TODO: Calculate the NPV for each scenario
+NPV_conservative = npf.npv(interest_rate, cash_flows_conservative)
+NPV_neutral = npf.npv(interest_rate, cash_flows_neutral)
+NPV_aggressive = npf.npv(interest_rate, cash_flows_aggressive)
 
 
 
 
 # @TODO: Manually Choose the project with the highest NPV value
 
-
+print(NPV_conservative, NPV_neutral, NPV_aggressive)

@@ -18,6 +18,9 @@ Be prepared to present your headlines and participate in a class discussion.
 
 As you brainstorm, think about the trends in each FinTech domain today, and how these current trends might affect the future of the FinTech landscape.
 
----
 
 © 2019 Trilogy Education Services
+
+---
+
+We did not do this in class.

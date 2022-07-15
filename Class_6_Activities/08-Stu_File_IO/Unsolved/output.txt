@@ -1,0 +1,2 @@
+This is an output file.
+here is some text
