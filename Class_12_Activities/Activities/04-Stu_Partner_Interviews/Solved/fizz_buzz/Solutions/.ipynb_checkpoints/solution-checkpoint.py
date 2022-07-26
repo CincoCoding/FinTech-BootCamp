@@ -1,5 +1,3 @@
-
-
 def fizz_buzz():
 
     for i in range(1,101):
